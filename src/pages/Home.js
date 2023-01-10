@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import { Card } from "react-bootstrap";
-import { useSelector, useDispatch, useState } from "react-redux";
-import { Container, Row, Col } from "react-grid";
+import { useSelector, useDispatch } from "react-redux";
+import { Container } from "react-grid";
 import { toast } from "react-toastify";
-import { deleteContact, getContact, setFilter } from "../redux/features/videoSlice";
+import { deleteContact, setFilter } from "../redux/features/videoSlice";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.css";
@@ -25,6 +25,7 @@ function MyVerticallyCenteredModal(props) {
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
+            title="videoHere"
           ></iframe>
         </Modal.Body>
         <Button variant="dark" onClick={props.onHide}>
@@ -56,7 +57,7 @@ const Home = () => {
   //   title={props.title}
   // />
   // };
-  const filterData = (value) => {};
+  // const filterData = (value) => {};
 
   return (
     <div style={{ marginTop: "30px" }}>
