@@ -25,7 +25,7 @@ const AddEdit = () => {
   useEffect(() => {
     dispatch(getContact(id));
     setState({...contact});
-  }, [id, contact]);
+  }, [dispatch, id, contact]);
 
   function handleSubmit(e) {
     e.preventDefault();
