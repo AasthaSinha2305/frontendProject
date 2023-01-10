@@ -25,24 +25,24 @@ const AddEdit = () => {
   useEffect(() => {
     dispatch(getContact(id));
     setState({...contact});
-  }, [id, contact])
+  }, [id, contact]);
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
     if (!title || !category || !link) {
       toast.error("Please provide value into each input field");
     } else {
-      if(!id){
+      if (!id) {
         dispatch(addContact(state));
         toast.success("Video Details Added Succesfully");
-      }else{
+      } else {
         dispatch(updateContact(state));
         toast.success("Video Details Updated Succesfully");
       }
 
       setTimeout(() => history.push("/"), 500);
     }
-  };
+  }
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
